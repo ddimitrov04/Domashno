@@ -1,0 +1,23 @@
+import javax.swing.JOptionPane;
+
+public class Program { 
+	public static void main(String[] args) {
+		String rr = JOptionPane.showInputDialog("r на окръжност:");
+		float r = 0;
+		try {
+			r = Float.parseFloat(rr);
+		}
+		catch(Exception ValueError) {
+			System.out.print("Другия път въведи само числа!");
+			return;
+		}
+		
+		if((r <= 0)) {
+			System.out.print("a или b е равно или е по-малко от нула.");
+			return;
+		}
+		
+		System.out.println("S = " + (int)((3.14*r)*2));
+		System.out.println("P = " + (int)(3.14*(2*r)));
+	}
+}
