@@ -1,0 +1,26 @@
+import javax.swing.JOptionPane;
+
+public class Program { 
+	public static void main(String[] args) {
+		String aa = JOptionPane.showInputDialog("a на правоъгълник:");
+		String bb = JOptionPane.showInputDialog("b на правоъгълник:");
+		float a = 0;
+		float b = 0;
+		try {
+			a = Float.parseFloat(aa);
+			b = Float.parseFloat(bb);
+		}
+		catch(Exception ValueError) {
+			System.out.print("Другия път въведи само числа!");
+			return;
+		}
+		
+		if((a <= 0) || (b <= 0)) {
+			System.out.print("a или b е равно или е по-малко от нула.");
+			return;
+		}
+		
+		System.out.println("P = " + (int)2*(a+b));
+		System.out.println("S = " + (int)a*b);
+	}
+}
