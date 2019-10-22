@@ -1,0 +1,31 @@
+import javax.swing.JOptionPane;
+ 
+public class Program {
+    public static void main(String[] args) {
+        String zcena = JOptionPane.showInputDialog("Цена за килограм зеленчуци:");
+        String pcena = JOptionPane.showInputDialog("Цена за килограм плодове:");
+        String zkg = JOptionPane.showInputDialog("Общи килограм зеленчуци:");
+        String pkg = JOptionPane.showInputDialog("Общи килограм плодове:");
+        float zcenaa = 0;
+        float pcenaa = 0;
+        float zkgg = 0;
+        float pkgg = 0;
+        try {
+            zcenaa = Float.parseFloat(zcena);
+            pcenaa = Float.parseFloat(pcena);
+            zkgg = Float.parseFloat(zkg);
+            pkgg = Float.parseFloat(pkg);
+        } catch(Exception ValueError) {
+            System.out.print("Другия път напиши числа!");
+            return;
+        }
+        if (((zcenaa < 0) || (zcenaa > 1000)) || ((pcenaa < 0) || (pcenaa > 1000)) || ((zkgg < 0) || (zkgg > 1000)) || ((pkgg < 0) || (pkgg > 1000))) {
+            System.out.print("Невалидни числа!");
+            return;        
+        }
+       
+        System.out.print("Приходи в евро: " + (int)((((zcenaa * zkgg) + (pcenaa * pkgg)) / 1.94)));
+       
+       
+    }
+}
