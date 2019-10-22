@@ -1,0 +1,28 @@
+import javax.swing.JOptionPane;
+
+public class Program { 
+	public static void main(String[] args) {
+		String aa = JOptionPane.showInputDialog("a на трапец:");
+		String bb = JOptionPane.showInputDialog("b на трапец:");
+		String hh = JOptionPane.showInputDialog("h на трапец:");
+		float a = 0;
+		float b = 0;
+		float h = 0;
+		try {
+			a = Float.parseFloat(aa);
+			b = Float.parseFloat(bb);
+			h = Float.parseFloat(hh);
+		}
+		catch(Exception ValueError) {
+			System.out.print("Другия път въведи само числа!");
+			return;
+		}
+		
+		if((a <= 0) || (b <= 0)) {
+			System.out.print("a или b е равно или е по-малко от нула.");
+			return;
+		}
+		
+		System.out.println("P = " + (int)((a+b)*h/2));
+	}
+}
